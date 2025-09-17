@@ -1,13 +1,16 @@
 import { useEffect, useState } from "react";
 import "./App.js";
 import Sidebar from "./components/Sidebar/Sidebar";
+import GroupPopup from "./components/GroupPopup/GroupPopup.js";
 import Notes from "./components/Notes/Notes";
 import { getGroups, getNotesForGroup, addGroup } from "./utils/storage";
+import "./App.css";
 
 function App() {
   const [groups, setGroups] = useState([]);
   const [activeGroup, setActiveGroup] = useState(null);
   const [notes, setNotes] = useState([]);
+  const [popupOpen, setPopupOpen] = useState(false);
 
   useEffect(() => {
     const g = getGroups();
@@ -17,16 +20,11 @@ function App() {
     }
   }, []);
 
-  useEffect(() => {
-    if (activeGroup) {
-      const n = getNotesForGroup(activeGroup);
-      setNotes(n);
-    } else {
-      setNotes([]);
-    }
+ useEffect(() => {
+    if (activeGroup) setNotes(getNotesForGroup(activeGroup));
   }, [activeGroup]);
 
-  function handleAddGroup(name) {
+  const handleAddGroup= (name) => {
     const added = addGroup(name);
     if (added) {
       const g = getGroups();
@@ -36,9 +34,6 @@ function App() {
     return added;
   }
 
-  function refreshNotes() {
-    if (activeGroup) setNotes(getNotesForGroup(activeGroup));
-  }
 
   return (
     <div className="app">
@@ -47,22 +42,17 @@ function App() {
         activeGroup={activeGroup}
         setActiveGroup={setActiveGroup}
         onAddGroup={handleAddGroup}
+        setPopupOpen={setPopupOpen}
       />
 
-      <main className="main">
-        {activeGroup ? (
-          <Notes
-            key={activeGroup}
-            groupName={activeGroup}
-            notes={notes}
-            refreshNotes={refreshNotes}
-          />
-        ) : (
-          <div className="empty">
-            Create a group to start taking notes
-          </div>
-        )}
-      </main>
+     {activeGroup ? (
+      <Notes groupName={activeGroup} notes={notes} refreshNotes={()=> setNotes(getNotesForGroup(activeGroup))} />
+     ) : (
+      <div className="empty">Create a group to start taking notes </div>
+     )}
+     {popupOpen && (
+      <GroupPopup closePopup={() => setPopupOpen(false)} onCreate ={handleAddGroup} />
+     )}
     </div>
   );
 }

@@ -1,14 +1,16 @@
 import React, { useState } from "react";
 import "./GroupPopup..css";
 
-const GroupPopup = ({ closePopup, addGroup }) => {
-  const [name , setName] = useState("");
+const GroupPopup = ({ closePopup, onCreate }) => {
+  const [name, setName] = useState("");
 
-  const handleSubmit =()=>{
-    if (name.trim().length <2) return;
-    addGroup({id:Date.now(), name});
-    setName("");
-    closePopup();
+  const handleSubmit = () => {
+    if (name.trim().length < 2) return;
+    const ok = onCreate(name);
+    if (ok) {
+      setName("");
+      closePopup();
+    }
   };
 
   return (
@@ -18,7 +20,7 @@ const GroupPopup = ({ closePopup, addGroup }) => {
         <input
           type="text"
           value={name}
-          onChange={(e) => SVGAnimateTransformElement(e.target.value)}
+          onChange={(e) => setName(e.target.value)}
           placeholder="Group name"
         />
         <button onClick={handleSubmit}>Create</button>
