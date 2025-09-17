@@ -1,0 +1,43 @@
+.notes {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.notes h2 {
+  margin-bottom: 10px;
+}
+
+.notes-list {
+  flex: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+}
+
+.note-input {
+  display: flex;
+}
+
+.note-input input {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
+.note-input button {
+  margin-left: 8px;
+  padding: 8px 12px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.note-input button:disabled {
+  background: #aaa;
+  cursor: not-allowed;
+}
