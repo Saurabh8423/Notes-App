@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import styles from "./App.js";
+import "./App.js";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Notes from "./components/Notes/Notes";
 import { getGroups, getNotesForGroup, addGroup } from "./utils/storage";
@@ -41,7 +41,7 @@ function App() {
   }
 
   return (
-    <div className={styles.app}>
+    <div className="app">
       <Sidebar
         groups={groups}
         activeGroup={activeGroup}
@@ -49,7 +49,7 @@ function App() {
         onAddGroup={handleAddGroup}
       />
 
-      <main className={styles.main}>
+      <main className="main">
         {activeGroup ? (
           <Notes
             key={activeGroup}
@@ -58,7 +58,7 @@ function App() {
             refreshNotes={refreshNotes}
           />
         ) : (
-          <div className={styles.empty}>
+          <div className="empty">
             Create a group to start taking notes
           </div>
         )}
