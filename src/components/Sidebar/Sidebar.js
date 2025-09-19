@@ -1,19 +1,37 @@
-import React from 'react';
-import './Sidebar.css';
+import React from "react";
+import "./Sidebar.css";
 
-export default function Sidebar({ groups, activeGroup, setActiveGroup, onAddGroup, setPopupOpen }) {
+const Sidebar = ({ groups = [], onSelectGroup, onAddGroup }) => {
+
   return (
     <div className="sidebar">
-      <h2>Groups</h2>
-      <button onClick={() => setPopupOpen(true)} className="add-group-btn">+ Add Group</button>
-      <ul>
-        {groups.map((g, idx) => (
-          <li key={idx} className={activeGroup === g ? 'active' : ''} onClick={() => setActiveGroup(g)}>
-            <div className="group-avatar">{g.slice(0, 2).toUpperCase()}</div>
-            <span>{g}</span>
-          </li>
+      <h2>Pocket Notes</h2>
+      <div className="group-list">
+        {groups.map((g) => (
+          <div
+            key={g.id}
+            className="groupItem"
+            onClick={() => onSelectGroup(g)} // ✅ Calls parent handler
+          >
+            <div
+              className="avatar"
+              style={{ background: g.color || "red" }}
+            >
+              {g.name
+                .split(" ")
+                .map((w) => w[0])
+                .join("")
+                .toUpperCase()
+                .slice(0, 2)}
+            </div>
+            <span>{g.name}</span>
+          </div>
         ))}
-      </ul>
+      </div>
+
+      <button onClick={onAddGroup} className="addButton">+</button>
     </div>
   );
-}
+};
+
+export default Sidebar;

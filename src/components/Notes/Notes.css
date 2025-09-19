@@ -1,0 +1,90 @@
+.notes {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.notes-header {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px 8px 0 0;
+  gap: 10px;
+  background-color: #007bff;
+}
+
+.group-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #0056b3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 18px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.notes-list {
+  flex: 1;
+  overflow-y: auto;
+  background: #DAE5F5;
+  padding: 10px;
+  margin-bottom: 8px;
+}
+
+.note {
+  background: white;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.note-input {
+  display: flex;
+  position: relative;
+  border: 8px solid #001F8B;
+  border-radius: 5px;
+}
+
+.note-input textarea {
+  flex: 1;
+  resize: none;
+  padding: 10px 40px 10px 10px;
+  border: none;
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  font-size: 16px;
+  height: 60px;
+}
+
+.note-input button {
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: #007bff;
+  color: white;
+  font-size: 18px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.note-input button:disabled {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.sendActive {
+  background: blue !important;
+}
