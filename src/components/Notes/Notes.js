@@ -48,15 +48,14 @@ function Notes({ group }) {
       <div className="notes-list">
         {notes.map((n) => (
           <div key={n.id} className="note">
-            <p>{n.content}</p>
-            <small>
+            <p className="note-text">{n.content}</p>
+            <small  className="note-time">
               {new Date(n.updatedAt).toLocaleDateString()}{" "}
               {new Date(n.updatedAt).toLocaleTimeString()}
             </small>
           </div>
         ))}
       </div>
-
       
       <div className="note-input">
         <textarea

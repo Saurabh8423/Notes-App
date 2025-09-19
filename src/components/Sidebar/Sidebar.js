@@ -5,13 +5,13 @@ const Sidebar = ({ groups = [], onSelectGroup, onAddGroup }) => {
 
   return (
     <div className="sidebar">
-      <h2>Pocket Notes</h2>
+      <div className="sidebar-header">Pocket Notes</div>
       <div className="group-list">
         {groups.map((g) => (
           <div
             key={g.id}
-            className="groupItem"
-            onClick={() => onSelectGroup(g)} // ✅ Calls parent handler
+            className="group-item"
+            onClick={() => onSelectGroup(g)}
           >
             <div
               className="avatar"
@@ -24,7 +24,7 @@ const Sidebar = ({ groups = [], onSelectGroup, onAddGroup }) => {
                 .toUpperCase()
                 .slice(0, 2)}
             </div>
-            <span>{g.name}</span>
+            <span className="group-name">{g.name}</span>
           </div>
         ))}
       </div>

@@ -15,11 +15,12 @@ export function getGroups() {
   return load().groups;
 }
 
-export function addGroup(name) {
+export function addGroup(name, color) {
   const data = load();
-  const newGroup = { id: uuidv4(), name, notes: [] };
+  const newGroup = { id: uuidv4(), name, color, notes: [] };
   data.groups.push(newGroup);
   save(data);
+  return newGroup;
 }
 
 export function getNotes(groupId) {
@@ -33,11 +34,13 @@ export function addNote(groupId, content) {
   const group = data.groups.find((g) => g.id === groupId);
   if (!group) return;
   const now = new Date().toISOString();
-  group.notes.push({
+  const note = {
     id: uuidv4(),
     content,
     createdAt: now,
     updatedAt: now,
-  });
+  };
+  group.notes.push(note);
   save(data);
+  return note;
 }

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar/Sidebar.js"
 import GroupPopup from "../components/GroupPopup/GroupPopup.js";
 import Notes from "../components/Notes/Notes.js";
-import homeImage from "../assets/welcome.jpg";
+import homeImage from "../assets/welcome.png";
+import { getGroups, addGroup } from "../utils/storage";
 import "./Home.css";
 
 function Home() {
@@ -10,14 +11,13 @@ function Home() {
   const [selectedGroup, setSelectedGroup] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
 
-    const handleCreateGroup = (name, color) => {
-    const newGroup = {
-      id: Date.now(),
-      name,
-      color,
-      notes: [],
-    };
-    setGroups([...groups, newGroup]);
+  useEffect(() => {
+    setGroups(getGroups());
+  }, []);
+
+  const handleCreateGroup = (name, color) => {
+    const newGroup = addGroup(name, color);
+    setGroups((prev) => [...prev, newGroup]); 
   };
 
   return (
@@ -44,8 +44,8 @@ function Home() {
         )}
       </div>
       {showPopup && <GroupPopup closePopup={() => setShowPopup(false)}
-      onCreate={handleCreateGroup}
-       />}
+        onCreate={handleCreateGroup}
+      />}
     </div>
   );
 };

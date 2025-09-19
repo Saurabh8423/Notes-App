@@ -3,19 +3,22 @@
   flex-direction: column;
   height: 100%;
   width: 100%;
+  overflow: hidden;
 }
 
 .notes-header {
+  flex-shrink: 0;
   display: flex;
   align-items: center;
   padding: 10px 15px;
   color: #fff;
   font-size: 18px;
   font-weight: bold;
-  border-radius: 8px 8px 0 0;
   gap: 10px;
-  background-color: #007bff;
+  background-color: #001F8B;
+  z-index: 5;
 }
+
 
 .group-avatar {
   width: 40px;
@@ -36,7 +39,15 @@
   overflow-y: auto;
   background: #DAE5F5;
   padding: 10px;
-  margin-bottom: 8px;
+}
+
+.notes-list::-webkit-scrollbar {
+  width: 6px;
+}
+
+.notes-list::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 3px;
 }
 
 .note {
@@ -44,14 +55,28 @@
   padding: 10px;
   border-radius: 6px;
   margin-bottom: 8px;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+
+.note-text {
+  margin-bottom: 6px;
+}
+
+.note-time {
+  align-self: flex-end;
+  font-size: 12px;
+  color: #353535;
 }
 
 .note-input {
+  flex-shrink: 0;
   display: flex;
   position: relative;
   border: 8px solid #001F8B;
   border-radius: 5px;
+  background: #FFFFFF;
 }
 
 .note-input textarea {
@@ -61,13 +86,14 @@
   border: none;
   border-radius: 8px;
   background-color: #FFFFFF;
-  font-size: 16px;
-  height: 60px;
+  font-size: 18px;
+  height: 80px;
+  outline: none;
 }
 
 .note-input button {
   position: absolute;
-  right: 5px;
+  right: 12px;
   top: 50%;
   transform: translateY(-50%);
   border: none;
