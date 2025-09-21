@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+
 .notes {
   display: flex;
   flex-direction: column;
@@ -12,6 +15,7 @@
   align-items: center;
   padding: 10px 15px;
   color: #fff;
+  font-family: "Roboto", sans-serif;
   font-size: 18px;
   font-weight: bold;
   gap: 10px;
@@ -28,8 +32,9 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: bold;
-  font-size: 18px;
+  font-weight:bold;
+  font-size: 16px;
+  font-family: "Roboto", sans-serif;
   color: white;
   text-transform: uppercase;
 }
@@ -38,7 +43,7 @@
   flex: 1;
   overflow-y: auto;
   background: #DAE5F5;
-  padding: 10px;
+  padding: 20px;
 }
 
 .notes-list::-webkit-scrollbar {
@@ -50,9 +55,13 @@
   border-radius: 3px;
 }
 
+.notes-list::-webkit-scrollbar-thumb:hover {
+  background: #999;
+}
+
 .note {
   background: white;
-  padding: 10px;
+  padding: 20px 15px;
   border-radius: 6px;
   margin-bottom: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -61,10 +70,14 @@
 }
 
 .note-text {
-  margin-bottom: 6px;
+  border-radius: 10px;
+  word-spacing: 5px;
+  line-height: 1.5;
+  font-family: "Roboto", sans-serif;
 }
 
 .note-time {
+  padding-top: 10px;
   align-self: flex-end;
   font-size: 12px;
   color: #353535;
@@ -74,20 +87,20 @@
   flex-shrink: 0;
   display: flex;
   position: relative;
-  border: 8px solid #001F8B;
-  border-radius: 5px;
-  background: #FFFFFF;
+  border-bottom-left-radius: 6px;
+  border: 15px solid #001F8B;
+  background: #001F8B;
 }
 
 .note-input textarea {
   flex: 1;
   resize: none;
-  padding: 10px 40px 10px 10px;
-  border: none;
-  border-radius: 8px;
+  padding: 10px;
+  border-radius: 9px;
   background-color: #FFFFFF;
   font-size: 18px;
-  height: 80px;
+  font-family: "Roboto", sans-serif;
+  height: 150px;
   outline: none;
 }
 
@@ -95,7 +108,7 @@
   position: absolute;
   right: 12px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(100%);
   border: none;
   background: #007bff;
   color: white;
