@@ -17,20 +17,28 @@ function Home() {
 
   const handleCreateGroup = (name, color) => {
     const newGroup = addGroup(name, color);
-    setGroups((prev) => [...prev, newGroup]); 
+    setGroups((prev) => [...prev, newGroup]);
   };
+
+  const handleBack = () => {
+    setSelectedGroup(null); 
+  };
+
 
   return (
     <div className="container">
+      <div className={`sidebar-wrapper ${selectedGroup ? "hide-mobile" : ""}`}>
       <Sidebar
         groups={groups}
         onSelectGroup={setSelectedGroup}
         onAddGroup={() => setShowPopup(true)}
       />
+      </div>
 
-      <div className="notesArea">
+      <div className={`notesArea ${!selectedGroup ? "hide-mobile" : ""}`}>
+
         {selectedGroup ? (
-          <Notes group={selectedGroup} />
+          <Notes group={selectedGroup} onBack={handleBack} />
         ) : (
           <div className="welcome">
             <img className="homeImages" src={homeImage} alt="Pocket Notes" />

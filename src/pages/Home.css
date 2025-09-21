@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
 
-
 .container {
   display: flex;
   height: 100vh;
@@ -77,4 +76,37 @@
 .homeImages {
   width: 626px;
   height: 313px;
+}
+
+
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+  }
+
+  .welcome h1 {
+    font-size: 24px;
+  }
+
+  .welcome p {
+    font-size: 14px;
+  }
+
+  .homeImages {
+    width: 90%;
+    height: auto;
+  }
+
+  .encrypt {
+    font-size: 14px;
+    margin-top: 70px;
+    position: absolute;
+  }
 }

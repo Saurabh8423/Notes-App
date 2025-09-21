@@ -61,7 +61,7 @@
 
 .note {
   background: white;
-  padding: 20px 15px;
+  padding: 20px 20px 10px 20px;
   border-radius: 6px;
   margin-bottom: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -77,11 +77,27 @@
 }
 
 .note-time {
-  padding-top: 10px;
-  align-self: flex-end;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
   font-size: 12px;
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;
   color: #353535;
+  gap: 10px;
+  margin-top: 10px;
 }
+
+.small-clock {
+  font-size: 5px;   
+  font-weight: 500;
+  font-family: "Roboto", sans-serif;    
+  vertical-align: middle;
+  color:black;
+  background-color: black;
+  border-radius: 50%;
+}
+
 
 .note-input {
   flex-shrink: 0;
@@ -126,4 +142,75 @@
 
 .sendActive {
   background: blue !important;
+}
+
+
+.back-btn {
+  display: none; 
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 22px;
+  cursor: pointer;
+  margin-right: 12px;
+}
+
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+
+  .notes {
+  display:grid;
+  flex-direction: column;
+  overflow: hidden;
+}
+  .notes-header {
+    font-size: 16px;
+    padding: 10px;
+  }
+
+  .notes-list {
+    padding: 10px;
+  }
+
+  .note {
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .note-text {
+    font-size: 14px;
+  }
+
+  .note-input {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border: none;
+    border-top: 2px solid #001F8B;
+    background: #001F8B;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+  }
+
+  .note-input textarea {
+    height: 130px;
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  .note-input button {
+    position: absolute;
+    transform: none;
+    margin-left: 8px;
+    width: 35px;
+    height: 35px;
+    font-size: 16px;
+  }
+
+  .back-btn {
+    display: inline-block; /* visible only on mobile */
+  }
 }

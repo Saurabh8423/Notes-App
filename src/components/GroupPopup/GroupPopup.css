@@ -96,3 +96,30 @@
 .popup button:hover {
   background: #1c18a0;
 }
+
+/* 📱 Mobile */
+@media (max-width: 768px) {
+  .popup {
+    width: 150%;
+    max-width: 350px;
+  }
+
+  .popup-title {
+    font-size: 14px;
+  }
+
+  .colorCircle {
+  width: 18px;
+  height: 18px;
+  
+}
+
+  .popup input {
+    font-size: 12px;
+  }
+
+  .createBtn {
+    font-size: 12px;
+    padding: 8px 16px;
+  }
+}
