@@ -32,7 +32,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight:bold;
+  font-weight: bold;
   font-size: 16px;
   font-family: "Roboto", sans-serif;
   color: white;
@@ -89,11 +89,11 @@
 }
 
 .small-clock {
-  font-size: 5px;   
+  font-size: 5px;
   font-weight: 500;
-  font-family: "Roboto", sans-serif;    
+  font-family: "Roboto", sans-serif;
   vertical-align: middle;
-  color:black;
+  color: black;
   background-color: black;
   border-radius: 50%;
 }
@@ -146,7 +146,7 @@
 
 
 .back-btn {
-  display: none; 
+  display: none;
   background: none;
   border: none;
   color: #fff;
@@ -160,21 +160,22 @@
 @media (max-width: 768px) {
 
   .notes {
-  display:grid;
-  flex-direction: column;
-  overflow: hidden;
-}
+    display: grid;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
   .notes-header {
     font-size: 16px;
     padding: 10px;
   }
 
   .notes-list {
-    padding: 10px;
+    padding: 15px;
   }
 
   .note {
-    padding: 12px;
+    padding: 15px;
     font-size: 14px;
   }
 
@@ -188,6 +189,7 @@
     left: 0;
     width: 100%;
     border: none;
+    border-radius: 0;
     border-top: 2px solid #001F8B;
     background: #001F8B;
     display: flex;
@@ -198,7 +200,7 @@
   .note-input textarea {
     height: 130px;
     font-size: 14px;
-    padding: 6px;
+    padding: 10px;
   }
 
   .note-input button {
@@ -211,6 +213,6 @@
   }
 
   .back-btn {
-    display: inline-block; /* visible only on mobile */
+    display: inline-block;
   }
 }
