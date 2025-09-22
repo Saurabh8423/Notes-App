@@ -192,8 +192,8 @@
     left: 0;
     width: 100%;
     border: none;
-    border-radius: 0;
-    border-top: 2px solid #001F8B;
+    border-bottom-left-radius: 0;
+    border: 8px solid #001F8B;
     background: #001F8B;
     display: flex;
     align-items: center;
