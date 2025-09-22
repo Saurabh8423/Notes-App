@@ -86,3 +86,4 @@ const GroupPopup = ({ closePopup, onCreate }) => {
 };
 
 export default GroupPopup;
+
