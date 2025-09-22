@@ -3,8 +3,6 @@
 .container {
   display: flex;
   height: 100vh;
-  /* position: relative;
-  overflow: hidden; */
   background: #dbe6f1;
 }
 
@@ -22,7 +20,7 @@
   position: absolute;
   bottom: 20px;
   right: 20px;
-  background: rgb(3, 3, 146);
+  background: #0d2677;
   color: white;
   font-size: 35px;
   font-family: "Roboto", sans-serif;
@@ -44,40 +42,47 @@
 
 
 .welcome {
-  margin: auto;
+  display: flex;
+  flex-direction: column;   
+  justify-content: center;
+  align-items: center; 
   text-align: center;
+  height: 100%;             
   padding: 20px;
-  position: relative;
+}
+
+.homeImages {
+  width: 626px;
+  height: 313px;
 }
 
 .welcome h1 {
   font-size: 40px;
+  letter-spacing: 2%;
   font-weight: bold;
   font-family: "Roboto", sans-serif;
 }
 
 .welcome p {
   font-size: 18px;
-  font-weight: 450;
+  font-weight: 420;
+  display: flex;
+  margin: 0;
   font-family: "Roboto", sans-serif;
 }
 
 
 
 .encrypt {
-  font-size: 16px;
+  position: absolute;
+  bottom: 10px;
+  font-size: 14px;
   font-family: "Roboto", sans-serif;
   color: #292929;
-  position: absolute;
   left: 50%;
-  margin-top: 100px;
   transform: translateX(-50%);
   text-align: center;
-}
-
-.homeImages {
-  width: 626px;
-  height: 313px;
+  margin-left: 100px;
 }
 
 
@@ -122,3 +127,5 @@
     position: absolute;
   }
 }
+
+

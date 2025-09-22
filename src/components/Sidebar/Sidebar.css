@@ -135,9 +135,9 @@
   }
 
   .addButton {
+    padding: 10px;
     position: fixed;
-    bottom: 30px;
-    right: 20px;
+    margin-bottom: 40px;
     width: 55px;
     height: 55px;
     border-radius: 50%;
