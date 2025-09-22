@@ -156,7 +156,7 @@
 }
 
 
-/* 📱 Mobile */
+/*  Mobile */
 @media (max-width: 768px) {
 
   .notes {
@@ -168,6 +168,7 @@
   .notes-header {
     font-size: 16px;
     padding: 10px;
+    height: 8vh;
   }
 
   .notes-list {

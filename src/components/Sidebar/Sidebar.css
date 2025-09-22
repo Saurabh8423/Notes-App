@@ -99,7 +99,7 @@
   justify-content: center; 
 } 
 
-/* 📱 Mobile */
+/* Mobile */
 @media (max-width: 768px) {
   .sidebar {
     flex-direction: column;
@@ -138,11 +138,10 @@
     position: fixed;
     bottom: 20px;
     right: 20px;
-    margin: 0;
     width: 55px;
     height: 55px;
     border-radius: 50%;
-    font-size: 26px;
+    font-size: 28px;
   }
 }
 
