@@ -96,8 +96,8 @@
   margin-right: 10px;
   display: flex;
   align-items: center;
-  justify-content: center; 
-} 
+  justify-content: center;
+}
 
 /* Mobile */
 @media (max-width: 768px) {
@@ -111,7 +111,7 @@
 
   .sidebar-header {
     font-size: 30px;
-    padding: 25px 10px ;
+    padding: 25px 10px;
   }
 
   .group-list {
@@ -144,5 +144,3 @@
     font-size: 28px;
   }
 }
-
-

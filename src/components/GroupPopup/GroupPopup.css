@@ -57,6 +57,7 @@
 }
 
 .color-list {
+  margin-right: 30px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -106,6 +107,12 @@
 
   .popup-title {
     font-size: 18px;
+  }
+
+  .color-list {
+    margin-right: 5px;
+    gap: 10px;
+
   }
 
   .colorCircle {
