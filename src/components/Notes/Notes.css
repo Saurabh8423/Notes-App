@@ -162,7 +162,7 @@
 @media (max-width: 768px) {
 
   .notes {
-    display: grid;
+    display: flex;
     flex-direction: column;
     overflow: hidden;
   }
